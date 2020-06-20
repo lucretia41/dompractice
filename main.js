@@ -9,45 +9,42 @@
 //
 
 const bodyElement = document.querySelector('body')
+
+
+const buttonElement = document.createElement('Remove')
+buttonElement.style.backgroundColor = 'lightblue'
+buttonElement.style.color = 'black'
+buttonElement.style.padding = '5px'
+buttonElement.append('Remove')
+bodyElement.prepend(buttonElement)
+
+
 const scriptElement = document.querySelector('script')
-
-const clearbuttonElement = document.createElement('Clear')
-clearbuttonElement.style.backgroundColor = 'lightblue'
-clearbuttonElement.style.color = 'black'
-clearbuttonElement.style.padding = '5px'
-clearbuttonElement.append('Clear')
-
-
-bodyElement.prepend(clearbuttonElement)
-
-
-
 const mainElement = document.createElement('main')
 bodyElement.insertBefore(mainElement, scriptElement)
 
 
 
-let imageElement = document.createElement('img')
+const imageElement = document.createElement('img')
 imageElement.className = 'image'
 imageElement.src = 'https://art-vangogh.com/image/Saint%20Remy%20(1889-90)/46%20Self-Portrait.jpg'
 imageElement.alt = 'Vincent at Saint Remy'
 imageElement.style.height = '400px'
-mainElement.append(imageElement)
 
-let anchorElement = document.createElement('a')
+
+const anchorElement = document.createElement('a')
 anchorElement.className = 'link'
 anchorElement.append('Link to Vincent van Gogh')
 anchorElement.href = 'http://art-vangogh.com/'
 anchorElement.target = ' _blank'
-mainElement.append(anchorElement)
+mainElement.append(imageElement, anchorElement)
 
 
 
 
 
-
-clearbuttonElement.addEventListener('click', function () {
+buttonElement.addEventListener('click', function () {
   mainElement.remove()
-  console.log('clear button clicked')
+  console.log('Remove button clicked')
 
 })
