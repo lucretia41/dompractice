@@ -11,10 +11,7 @@
 const bodyElement = document.querySelector('body')
 
 
-const buttonElement = document.createElement('Remove')
-buttonElement.style.backgroundColor = 'lightblue'
-buttonElement.style.color = 'black'
-buttonElement.style.padding = '5px'
+const buttonElement = document.createElement('button')
 buttonElement.append('Remove')
 bodyElement.prepend(buttonElement)
 
